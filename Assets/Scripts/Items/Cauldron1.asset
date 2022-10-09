@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2f50fd18077ad47b38f8ba0db0be76, type: 3}
+  m_Name: Cauldron1
+  m_EditorClassIdentifier: 
+  name: "Caldeir\xE3o"
+  necessaryItems:
+  - {fileID: 11400000, guid: 1d04748924b3fe2498030f04a162f848, type: 2}
+  - {fileID: 11400000, guid: 996b8cb099831614f8daea7045673eea, type: 2}
+  - {fileID: 11400000, guid: f1786ca22acb7114e860977d275a9dfa, type: 2}
+  rewards: []
+  availableDialogs:
+  - text: "\xD3timo! Agora ponho todos os ingredientes no caldeir\xE3o e..."
+    speed: 2
+  - text: "Espl\xEAndido!"
+    speed: 3
+  - text: "... Oh n\xE3o."
+    speed: 2
+  - text: "Macacos me mordam! N\xE3o creio que me esqueci de algo para iniciar o
+      fogo!"
+    speed: 2
+  - text: Preciso acender essa chama de alguma forma...
+    speed: 1
+  unavailableDialogs: []
+  inInventory: 0
+  interacted: 0
