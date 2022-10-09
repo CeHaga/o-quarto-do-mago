@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &583002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2095554050128529859, guid: e345f30ce3e693f46b680f29985488ff, type: 3}
+  m_PrefabInstance: {fileID: 1690460853852075489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &294171111
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,12 +172,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53153e32909d4b34eaa036145a88881e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgrounds:
-  - {fileID: 1253931263}
-  - {fileID: 873266391}
-  - {fileID: 1477797816}
-  - {fileID: 1878383754}
   backgroundX: 17.9
+  backgroundXPeek: 5
+  backgrounds:
+  - background: {fileID: 804630325}
+    necessaryItems: []
+  - background: {fileID: 583002}
+    necessaryItems: []
+  - background: {fileID: 1887401951}
+    necessaryItems: []
+  - background: {fileID: 887714949}
+    necessaryItems:
+    - {fileID: 11400000, guid: 91ce44bc19f660a4c96c1492f37e21d3, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +336,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &804630325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5876902535472342490, guid: 03fec6adb4aab8c4ca165c54d8f859c1, type: 3}
+  m_PrefabInstance: {fileID: 2109744224380310360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &852182634
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +478,11 @@ CanvasRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 940745483527596309, guid: e345f30ce3e693f46b680f29985488ff, type: 3}
   m_PrefabInstance: {fileID: 1690460853852075489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &887714949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6484414567836726542, guid: 00cd34b045186314eb6548c77d9588c8, type: 3}
+  m_PrefabInstance: {fileID: 4718070319813137613}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1122050492
 GameObject:
@@ -773,6 +794,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2192841203499916529, guid: 00cd34b045186314eb6548c77d9588c8, type: 3}
   m_PrefabInstance: {fileID: 4718070319813137613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1887401951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1904035464537293045, guid: 78f574e2b8161054591b451546d3f15a, type: 3}
+  m_PrefabInstance: {fileID: 1435744307}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2107665892
 GameObject:
