@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Background
 {
 	public GameObject background;
-	public bool isAccessible;
+	public Item[] necessaryItems;
 	
-	public void Accessible(bool accessible)
+	public bool IsAvailable()
 	{
-		isAccessible = accessible;
-	}
+		foreach (Item item in necessaryItems)
+		{
+			if (!item.inInventory)
+			{
+				return false;
+			}
+		}
+		return true;
+	}	
 }
