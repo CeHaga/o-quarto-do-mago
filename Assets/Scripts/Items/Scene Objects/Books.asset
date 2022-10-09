@@ -9,13 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2f50fd18077ad47b38f8ba0db0be76, type: 3}
-  m_Name: Cauldron2
+  m_Script: {fileID: 11500000, guid: 4f717b8e163cedc4b82aed9cc2f66c1f, type: 3}
+  m_Name: Books
   m_EditorClassIdentifier: 
-  name: 
+  name: Livros
+  inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
   necessaryItems: []
   rewards: []
-  availableDialogs: []
+  newItemScene: {fileID: 0}
+  availableDialogs:
+  - text: "Minha cole\xE7\xE3o de livros do Harry Potter. Se eu esquecer quem escreveu,
+      at\xE9 que \xE9 bom."
+    speed: 2
   unavailableDialogs: []
-  inInventory: 0
   interacted: 0

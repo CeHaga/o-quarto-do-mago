@@ -9,12 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2f50fd18077ad47b38f8ba0db0be76, type: 3}
-  m_Name: Lighthouse's light
+  m_Script: {fileID: 11500000, guid: 4f717b8e163cedc4b82aed9cc2f66c1f, type: 3}
+  m_Name: Skull
   m_EditorClassIdentifier: 
-  name: 
+  name: "Cr\xE2nio"
+  inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
   necessaryItems: []
   rewards: []
-  availableDialogs: []
+  newItemScene: {fileID: 0}
+  availableDialogs:
+  - text: Olavo.
+    speed: 2
+  - text: "N\xE3o sinto saudades."
+    speed: 2
   unavailableDialogs: []
-  inInventory: 0
+  interacted: 0

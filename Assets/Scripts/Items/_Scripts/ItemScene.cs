@@ -5,28 +5,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ItemScene", menuName = "Items/Scene", order = 0)]
 public class ItemScene : ScriptableObject {
 	public new string name;
-	public Item[] necessaryItems;
-	public Item[] rewards;
+	public Inventory inventory;
+	
+	public ItemInventory[] necessaryItems;
+	public ItemInventory[] rewards;
+	public ItemScene newItemScene;
 	
 	public Dialog[] availableDialogs;
 	public Dialog[] unavailableDialogs;
 	
-	public bool inInventory;
 	public bool interacted;
-	public void SetInInventory(bool inInventory)
-	{
-		this.inInventory = inInventory;
-	}
 	
-	public bool IsAvailable()
+	public bool IsAvailable(Inventory inventory)
 	{
-		foreach (Item item in necessaryItems)
-		{
-			if (!item.inInventory)
-			{
-				return false;
-			}
-		}
-		return true;
+		return inventory.HasItems(necessaryItems);
 	}
 }

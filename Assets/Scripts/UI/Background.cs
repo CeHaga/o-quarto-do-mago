@@ -6,17 +6,11 @@ using UnityEngine;
 public class Background
 {
 	public GameObject background;
-	public Item[] necessaryItems;
+	public Inventory inventory;
+	public ItemInventory[] necessaryItems;
 	
 	public bool IsAvailable()
 	{
-		foreach (Item item in necessaryItems)
-		{
-			if (!item.inInventory)
-			{
-				return false;
-			}
-		}
-		return true;
+		return inventory.HasItems(necessaryItems);
 	}	
 }

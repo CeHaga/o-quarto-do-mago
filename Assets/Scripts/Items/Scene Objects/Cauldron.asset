@@ -9,15 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2f50fd18077ad47b38f8ba0db0be76, type: 3}
-  m_Name: Cauldron1
+  m_Script: {fileID: 11500000, guid: 4f717b8e163cedc4b82aed9cc2f66c1f, type: 3}
+  m_Name: Cauldron
   m_EditorClassIdentifier: 
   name: "Caldeir\xE3o"
+  inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
   necessaryItems:
-  - {fileID: 11400000, guid: 1d04748924b3fe2498030f04a162f848, type: 2}
-  - {fileID: 11400000, guid: 996b8cb099831614f8daea7045673eea, type: 2}
-  - {fileID: 11400000, guid: f1786ca22acb7114e860977d275a9dfa, type: 2}
+  - {fileID: 11400000, guid: 20ecc9f445035b8469999794d96b09b6, type: 2}
+  - {fileID: 11400000, guid: 963e78d206b98b94195e46750c2cf0c8, type: 2}
+  - {fileID: 11400000, guid: f3a979ced2c80c04f99fc0811676ce2b, type: 2}
   rewards: []
+  newItemScene: {fileID: 0}
   availableDialogs:
   - text: "\xD3timo! Agora ponho todos os ingredientes no caldeir\xE3o e..."
     speed: 2
@@ -30,6 +32,7 @@ MonoBehaviour:
     speed: 2
   - text: Preciso acender essa chama de alguma forma...
     speed: 1
-  unavailableDialogs: []
-  inInventory: 0
+  unavailableDialogs:
+  - text: "Usarei este caldeir\xE3o para preparar a po\xE7\xE3o."
+    speed: 2
   interacted: 0

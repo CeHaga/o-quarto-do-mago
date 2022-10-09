@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2f50fd18077ad47b38f8ba0db0be76, type: 3}
-  m_Name: Something
+  m_Script: {fileID: 11500000, guid: 246a7c7ac8540ff4e972f4690d8f119f, type: 3}
+  m_Name: Flask
   m_EditorClassIdentifier: 
-  name: 
-  description: 
-  necessaryItems: []
-  inInventory: 0
+  name: Frasco
+  sprite: {fileID: 0}

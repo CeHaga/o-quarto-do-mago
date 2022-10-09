@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f717b8e163cedc4b82aed9cc2f66c1f, type: 3}
+  m_Name: TrapdoorOpen
+  m_EditorClassIdentifier: 
+  name: Escotilha Aberta
+  inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
+  necessaryItems:
+  - {fileID: 11400000, guid: 4bddb01de25b9814291b0c0692a269f5, type: 2}
+  rewards:
+  - {fileID: 11400000, guid: 20ecc9f445035b8469999794d96b09b6, type: 2}
+  newItemScene: {fileID: 0}
+  availableDialogs:
+  - text: "Basta aguardar a luz do farol apontar para c\xE1 e iluminar o frasco,
+      o resto fica por conta da magia."
+    speed: 2
+  - text: "Est\xE1 quase olhando para c\xE1... vamos l\xE1 farolzinho..."
+    speed: 2
+  - text: Vamos, vamos...
+    speed: 1
+  - text: "Vire-se para c\xE1 de uma vez..."
+    speed: 2
+  - text: "Meus bra\xE7os est\xE3o doendo, j\xE1 fazem quase DUAS HORAS!"
+    speed: 2
+  - text: "Oh \xE9 mesmo, \xE9 que o tempo aqui na torre corre diferente. Wohoho!"
+    speed: 2
+  - text: "Opa! Finalmente!! Aqui em minhas m\xE3os, a luz de um farol!"
+    speed: 2
+  - text: "\xC9 QUEEENTE! AI AI ai."
+    speed: 3
+  unavailableDialogs:
+  - text: "Aqui estava voc\xEA, meu farolzinho."
+    speed: 2
+  - text: "Agora \xE9 s\xF3 eu segurar um frasco bem alto e esperar..."
+    speed: 2
+  interacted: 0

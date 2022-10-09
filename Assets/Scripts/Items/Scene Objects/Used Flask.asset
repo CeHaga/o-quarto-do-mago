@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f717b8e163cedc4b82aed9cc2f66c1f, type: 3}
+  m_Name: Used Flask
+  m_EditorClassIdentifier: 
+  name: Frasco em uso
+  inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
+  necessaryItems: []
+  rewards:
+  - {fileID: 11400000, guid: 4bddb01de25b9814291b0c0692a269f5, type: 2}
+  newItemScene: {fileID: 0}
+  availableDialogs:
+  - text: Eu vou precisar de um destes.
+    speed: 2
+  - text: "Deixe eu apenas esvazi\xE1-lo antes..."
+    speed: 2
+  - text: Glub glub glub... E pronto.
+    speed: 1
+  - text: Pera. O que raios eu bebi?
+    speed: 3
+  unavailableDialogs: []
+  interacted: 0

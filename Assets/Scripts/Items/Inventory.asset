@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2f50fd18077ad47b38f8ba0db0be76, type: 3}
-  m_Name: TrapdootOpened
+  m_Script: {fileID: 11500000, guid: c52dbfcb3daaa7346a64ca0b55ca8708, type: 3}
+  m_Name: Inventory
   m_EditorClassIdentifier: 
-  name: 
-  necessaryItems: []
-  availableDialogs: []
-  unavailableDialogs: []
-  inInventory: 0
