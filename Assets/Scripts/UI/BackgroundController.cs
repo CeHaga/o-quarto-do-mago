@@ -22,6 +22,7 @@ public class BackgroundController : MonoBehaviour
 	// Access element in array as a circular list
 	private Background GetBackground(int index)
 	{
+		Debug.Log("GetBackground: " + (index + backgrounds.Length + 1) % backgrounds.Length);
 		return backgrounds[(index + backgrounds.Length) % backgrounds.Length];
 	}
 	
@@ -42,58 +43,98 @@ public class BackgroundController : MonoBehaviour
 	}
 	
 	// Move backgrounds using DOTween
-	private IEnumerator MoveBackgrounds(int start, int end, float distance, float time, int direction)
+	private IEnumerator MoveBackgrounds(int actual, int direction, float distance, int rangeStart = -1, int rangeEnd = 1, float time = 1)
 	{
-		int edge = direction > 0 ? start - 1 : end + 1;
-		int newEdge = direction > 0 ? end : start;
+		int newBackgroundIndex = (direction > 0) ? rangeStart - 1 : rangeEnd + 1;
+		int oldBackgroundIndex = (direction > 0) ? rangeEnd : rangeStart;
 		
-		Vector3 oldPosition = SetBackgroundEdge(actualBackground, edge, backgroundX);
+		int start = (direction > 0) ? newBackgroundIndex : oldBackgroundIndex;
+		int end = (direction > 0) ? oldBackgroundIndex : newBackgroundIndex;
 		
-		for (int i = start; i <= end; i = (i + 1) % backgrounds.Length)
+		Vector3 oldPosition = SetBackgroundEdge(actual, newBackgroundIndex, backgroundX);
+
+		for (int i = start; i <= end; i++)
 		{
-			Transform background = GetBackground(i).background.transform;
+			Debug.Log("Moving");
+			Transform background = GetBackground(actual + i).background.transform;
 			float x = background.position.x;
 			background.DOMoveX(x + distance * direction, time);
 		}
+		
 		yield return new WaitForSeconds(time);
-		SetBackgroundPosition(actualBackground + newEdge, oldPosition);
+		SetBackgroundPosition(actual + oldBackgroundIndex, oldPosition);
+		isMoving = false;
+		Debug.Log("Finished moving");
+	}
+	
+	// Move backgrounds in case of not available
+	private IEnumerator MoveBackgroundsNotAvailable(int actual, int direction, float distance, int rangeStart = -1, int rangeEnd = 1, float time = 1)
+	{
+		int start = rangeStart;
+		int end = rangeEnd;
+		
+		for (int i = start; i <= end; i++)
+		{
+			Debug.Log("Moving");
+			Transform background = GetBackground(actual + i).background.transform;
+			float x = background.position.x;
+			background.DOMoveX(x + distance * direction, time);
+		}
+		
+		yield return new WaitForSeconds(time);
+		
+		for (int i = start; i <= end; i++)
+		{
+			Debug.Log("Moving");
+			Transform background = GetBackground(actual + i).background.transform;
+			float x = background.position.x;
+			background.DOMoveX(x + distance * -direction, time);
+		}
+		
+		yield return new WaitForSeconds(time);
+		
 		isMoving = false;
 	}
  
 	public void MoveLeft()
 	{
+		Debug.Log("MoveLeft Entered");
 		if (isMoving) return;
-		isMoving = true;
+		isMoving = true;	
+		Debug.Log("MoveLeft Not Moving");
 		
-		int nextBackground = (actualBackground - 1 + backgrounds.Length) % backgrounds.Length;
+		int nextBackground = actualBackground - 1;
 		
-		if (backgrounds[nextBackground].IsAvailable())
+		if (GetBackground(nextBackground).IsAvailable())
 		{
-			Vector3 oldPosition = SetBackgroundEdge(actualBackground, -2, backgroundX);
-			// StartCoroutine(MoveBackgrounds(actualBackground - 2, actualBackground + 1, 1, backgroundX, oldPosition));
+			Debug.Log("MoveLeft Available");
+			StartCoroutine(MoveBackgrounds(actualBackground, 1, backgroundX));
 			actualBackground = nextBackground;
 		}
 		else
 		{
-			// StartCoroutine(MoveBackgroundsNotAvailable(actualBackground - 1, actualBackground + 1, 1, backgroundXPeek));
+			StartCoroutine(MoveBackgroundsNotAvailable(actualBackground, 1, backgroundXPeek));
 		}
 	}
 
 	public void MoveRight()
 	{
+		Debug.Log("MoveRight Entered");
 		if (isMoving) return;
 		isMoving = true;	
+		Debug.Log("MoveRight Not Moving");
 		
 		int nextBackground = actualBackground + 1;
 		
 		if (GetBackground(nextBackground).IsAvailable())
 		{
-			StartCoroutine(MoveBackgrounds(actualBackground - 1, actualBackground + 2, backgroundX, movingTime, -1));
-			actualBackground = nextBackground % backgrounds.Length;
+			Debug.Log("MoveRight Available");
+			StartCoroutine(MoveBackgrounds(actualBackground, -1, backgroundX));
+			actualBackground = nextBackground;
 		}
 		else
 		{
-			// StartCoroutine(MoveBackgroundsNotAvailable(actualBackground - 1, actualBackground + 1, -1, backgroundXPeek));
+			StartCoroutine(MoveBackgroundsNotAvailable(actualBackground, -1, backgroundXPeek));
 		}
 	}
 }
