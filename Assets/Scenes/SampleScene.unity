@@ -177,18 +177,18 @@ MonoBehaviour:
   backgroundXPeek: 5
   backgrounds:
   - background: {fileID: 804630325}
-    inventory: {fileID: 0}
+    inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
     necessaryItems: []
   - background: {fileID: 583002}
-    inventory: {fileID: 0}
+    inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
     necessaryItems: []
   - background: {fileID: 1887401951}
-    inventory: {fileID: 0}
+    inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
     necessaryItems: []
-  - background: {fileID: 0}
-    inventory: {fileID: 0}
+  - background: {fileID: 1415743585}
+    inventory: {fileID: 11400000, guid: ab3ee6ee8031318458d5df34f028c3c8, type: 2}
     necessaryItems:
-    - {fileID: 11400000, guid: 91ce44bc19f660a4c96c1492f37e21d3, type: 2}
+    - {fileID: 11400000, guid: 55bff8a7d2eb461498a91f08b5f7d7d8, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +590,11 @@ RectTransform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7043253145212580279, guid: 03fec6adb4aab8c4ca165c54d8f859c1, type: 3}
   m_PrefabInstance: {fileID: 2109744224380310360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1415743585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6484414567836726542, guid: 00cd34b045186314eb6548c77d9588c8, type: 3}
+  m_PrefabInstance: {fileID: 4718070319813137613}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1435744307
 PrefabInstance:
