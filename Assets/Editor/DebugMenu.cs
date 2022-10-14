@@ -14,7 +14,7 @@ public class DebugMenu : EditorWindow
 	
 	private void OnGUI()
 	{
-		if (GUILayout.Button("Debug dialog", GUILayout.Width(80), GUILayout.Height(35)))
+		if (GUILayout.Button("Debug Dialog", GUILayout.Width(100), GUILayout.Height(35)) && Application.isPlaying)
 		{
 			DebugDialog();
 		}
@@ -25,6 +25,11 @@ public class DebugMenu : EditorWindow
 		if(subtitleController == null)
 		{
 			subtitleController = FindObjectOfType<SubtitleController>();
+			if(subtitleController == null)
+			{
+				Debug.LogError("SubtitleController not found");
+				return;
+			}
 		}
 		subtitleController.DebugDialog();
 	}

@@ -9,5 +9,11 @@ public class Dialog {
 		this.text = text;
 		this.textSpeed = textSpeed;
 	}
+	
+	public float timeBetweenLetters {
+		get {
+			return textSpeed.time / text.Length;
+		}
+	}
 }
 

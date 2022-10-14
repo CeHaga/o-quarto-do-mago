@@ -3,21 +3,34 @@ using UnityEngine;
 using TMPro;
 
 public class SubtitleController : MonoBehaviour {
-	[SerializeField] private TextMeshProUGUI _textMesh;
+	[SerializeField] private GameObject dialogBoxPanel;
+	[SerializeField] private TextMeshProUGUI textMesh;
 	
 	public Dialog[] testDialogs;
 	
-	public IEnumerator CO_SetTextForSeconds(Dialog dialog) {
-		_textMesh.enabled = true;
-		_textMesh.SetText(dialog.text);
-		yield return new WaitForSeconds(dialog.textSpeed.time);
-		//_textMesh.enabled = false;
+	private void Start() 
+	{
+		dialogBoxPanel.SetActive(false);
 	}
 	
-	public IEnumerator CO_PlayDialogs(Dialog[] dialogs) {
+	private IEnumerator CO_SetTextForSeconds(Dialog dialog) {
+		textMesh.enabled = true;
+		string text = "";
+		foreach (char c in dialog.text) {
+			text += c;
+			textMesh.text = text;
+			yield return new WaitForSeconds(dialog.timeBetweenLetters);
+		}
+		yield return new WaitForSeconds(0.5f);
+		textMesh.enabled = false;
+	}
+	
+	private IEnumerator CO_PlayDialogs(Dialog[] dialogs) {
+		dialogBoxPanel.SetActive(true);
 		foreach (var dialog in dialogs) {
 			yield return StartCoroutine(CO_SetTextForSeconds(dialog));
 		}
+		dialogBoxPanel.SetActive(false);
 	}
 	
 	public void StartText(Dialog[] dialogs) {
