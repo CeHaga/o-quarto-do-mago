@@ -806,6 +806,7 @@ GameObject:
   - component: {fileID: 1550122133}
   - component: {fileID: 1550122135}
   - component: {fileID: 1550122134}
+  - component: {fileID: 1550122136}
   m_Layer: 5
   m_Name: Subtitle
   m_TagString: Untagged
@@ -931,6 +932,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550122132}
   m_CullTransparentMesh: 1
+--- !u!114 &1550122136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550122132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9005757ac11d614e910fa7aaf4b339d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textMesh: {fileID: 1550122134}
+  testDialogs:
+  - text: "Esse \xE9 um texto lento..."
+    textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
+  - text: "Esse \xE9 um texto normal."
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
+  - text: "Esse \xE9 um texto r\xE1pido!"
+    textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
 --- !u!4 &1878383754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2192841203499916529, guid: 00cd34b045186314eb6548c77d9588c8, type: 3}
