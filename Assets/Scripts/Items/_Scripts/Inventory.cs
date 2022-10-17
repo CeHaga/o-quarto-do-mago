@@ -12,9 +12,25 @@ public class Inventory : ScriptableObject
 		inventory.Add(item);
 	}
 	
+	public void AddItems(ItemInventory[] items)
+	{
+		foreach (var item in items)
+		{
+			AddItem(item);
+		}
+	}
+	
 	public void RemoveItem(ItemInventory item)
 	{
 		inventory.Remove(item);
+	}
+	
+	public void RemoveItems(ItemInventory[] items)
+	{
+		foreach (var item in items)
+		{
+			RemoveItem(item);
+		}
 	}
 	
 	public bool HasItem(ItemInventory item)

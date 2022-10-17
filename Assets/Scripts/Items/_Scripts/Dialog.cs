@@ -12,7 +12,7 @@ public class Dialog {
 	
 	public float timeBetweenLetters {
 		get {
-			return textSpeed.time / text.Length;
+			return textSpeed.time;
 		}
 	}
 }

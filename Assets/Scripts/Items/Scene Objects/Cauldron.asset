@@ -34,5 +34,5 @@ MonoBehaviour:
     textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
   unavailableDialogs:
   - text: "Usarei este caldeir\xE3o para preparar a po\xE7\xE3o."
-    textSpeed: {fileID: 0}
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   interacted: 0
