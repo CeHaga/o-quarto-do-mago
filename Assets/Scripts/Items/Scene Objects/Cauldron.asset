@@ -22,17 +22,17 @@ MonoBehaviour:
   newItemScene: {fileID: 0}
   availableDialogs:
   - text: "\xD3timo! Agora ponho todos os ingredientes no caldeir\xE3o e..."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Espl\xEAndido!"
-    speed: 3
+    textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
   - text: "... Oh n\xE3o."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Macacos me mordam! N\xE3o creio que me esqueci de algo para iniciar o
       fogo!"
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: Preciso acender essa chama de alguma forma...
-    speed: 1
+    textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
   unavailableDialogs:
   - text: "Usarei este caldeir\xE3o para preparar a po\xE7\xE3o."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   interacted: 0

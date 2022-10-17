@@ -22,24 +22,24 @@ MonoBehaviour:
   availableDialogs:
   - text: "Basta aguardar a luz do farol apontar para c\xE1 e iluminar o frasco,
       o resto fica por conta da magia."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Est\xE1 quase olhando para c\xE1... vamos l\xE1 farolzinho..."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: Vamos, vamos...
-    speed: 1
+    textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
   - text: "Vire-se para c\xE1 de uma vez..."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Meus bra\xE7os est\xE3o doendo, j\xE1 fazem quase DUAS HORAS!"
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Oh \xE9 mesmo, \xE9 que o tempo aqui na torre corre diferente. Wohoho!"
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Opa! Finalmente!! Aqui em minhas m\xE3os, a luz de um farol!"
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "\xC9 QUEEENTE! AI AI ai."
-    speed: 3
+    textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
   unavailableDialogs:
   - text: "Aqui estava voc\xEA, meu farolzinho."
-    speed: 2
+    textSpeed: {fileID: 0}
   - text: "Agora \xE9 s\xF3 eu segurar um frasco bem alto e esperar..."
-    speed: 2
+    textSpeed: {fileID: 0}
   interacted: 0

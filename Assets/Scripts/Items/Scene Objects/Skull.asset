@@ -19,8 +19,8 @@ MonoBehaviour:
   newItemScene: {fileID: 0}
   availableDialogs:
   - text: Olavo.
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "N\xE3o sinto saudades."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   unavailableDialogs: []
   interacted: 0

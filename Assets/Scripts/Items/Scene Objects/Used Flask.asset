@@ -20,12 +20,12 @@ MonoBehaviour:
   newItemScene: {fileID: 0}
   availableDialogs:
   - text: Eu vou precisar de um destes.
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: "Deixe eu apenas esvazi\xE1-lo antes..."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - text: Glub glub glub... E pronto.
-    speed: 1
+    textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
   - text: Pera. O que raios eu bebi?
-    speed: 3
+    textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
   unavailableDialogs: []
   interacted: 0

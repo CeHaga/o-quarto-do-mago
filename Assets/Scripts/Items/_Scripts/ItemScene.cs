@@ -15,9 +15,11 @@ public class ItemScene : ScriptableObject {
 	public Dialog[] unavailableDialogs;
 	
 	public bool interacted;
-	
-	public bool IsAvailable(Inventory inventory)
+	public bool available 
 	{
-		return inventory.HasItems(necessaryItems);
+		get
+		{
+			return inventory.HasItems(necessaryItems);
+		}
 	}
 }

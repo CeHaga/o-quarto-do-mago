@@ -20,6 +20,6 @@ MonoBehaviour:
   availableDialogs:
   - text: "Minha cole\xE7\xE3o de livros do Harry Potter. Se eu esquecer quem escreveu,
       at\xE9 que \xE9 bom."
-    speed: 2
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   unavailableDialogs: []
   interacted: 0

@@ -22,7 +22,6 @@ public class BackgroundController : MonoBehaviour
 	// Access element in array as a circular list
 	private Background GetBackground(int index)
 	{
-		Debug.Log("GetBackground: " + (index + backgrounds.Length + 1) % backgrounds.Length);
 		return backgrounds[(index + backgrounds.Length) % backgrounds.Length];
 	}
 	
@@ -55,7 +54,6 @@ public class BackgroundController : MonoBehaviour
 
 		for (int i = start; i <= end; i++)
 		{
-			Debug.Log("Moving");
 			Transform background = GetBackground(actual + i).background.transform;
 			float x = background.position.x;
 			background.DOMoveX(x + distance * direction, time);
@@ -64,7 +62,6 @@ public class BackgroundController : MonoBehaviour
 		yield return new WaitForSeconds(time);
 		SetBackgroundPosition(actual + oldBackgroundIndex, oldPosition);
 		isMoving = false;
-		Debug.Log("Finished moving");
 	}
 	
 	// Move backgrounds in case of not available
@@ -75,7 +72,6 @@ public class BackgroundController : MonoBehaviour
 		
 		for (int i = start; i <= end; i++)
 		{
-			Debug.Log("Moving");
 			Transform background = GetBackground(actual + i).background.transform;
 			float x = background.position.x;
 			background.DOMoveX(x + distance * direction, time);
@@ -85,7 +81,6 @@ public class BackgroundController : MonoBehaviour
 		
 		for (int i = start; i <= end; i++)
 		{
-			Debug.Log("Moving");
 			Transform background = GetBackground(actual + i).background.transform;
 			float x = background.position.x;
 			background.DOMoveX(x + distance * -direction, time);
@@ -98,16 +93,13 @@ public class BackgroundController : MonoBehaviour
  
 	public void MoveLeft()
 	{
-		Debug.Log("MoveLeft Entered");
 		if (isMoving) return;
 		isMoving = true;	
-		Debug.Log("MoveLeft Not Moving");
 		
 		int nextBackground = actualBackground - 1;
 		
 		if (GetBackground(nextBackground).IsAvailable())
 		{
-			Debug.Log("MoveLeft Available");
 			StartCoroutine(MoveBackgrounds(actualBackground, 1, backgroundX));
 			actualBackground = nextBackground;
 		}
@@ -119,16 +111,13 @@ public class BackgroundController : MonoBehaviour
 
 	public void MoveRight()
 	{
-		Debug.Log("MoveRight Entered");
 		if (isMoving) return;
 		isMoving = true;	
-		Debug.Log("MoveRight Not Moving");
 		
 		int nextBackground = actualBackground + 1;
 		
 		if (GetBackground(nextBackground).IsAvailable())
 		{
-			Debug.Log("MoveRight Available");
 			StartCoroutine(MoveBackgrounds(actualBackground, -1, backgroundX));
 			actualBackground = nextBackground;
 		}
