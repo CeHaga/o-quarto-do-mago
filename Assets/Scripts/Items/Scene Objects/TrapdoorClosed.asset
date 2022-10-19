@@ -18,7 +18,8 @@ MonoBehaviour:
   rewards: []
   newItemScene: {fileID: 11400000, guid: cee96ca2c55a22b4aaa610f1febdcc00, type: 2}
   availableDialogs:
-  - text: "Ah\xE1! Eu sabia que essa coisinha abria."
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Ah\xE1! Eu sabia que essa coisinha abria."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   unavailableDialogs: []
   interacted: 0

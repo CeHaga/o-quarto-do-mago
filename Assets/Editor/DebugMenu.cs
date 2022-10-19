@@ -3,7 +3,15 @@ using UnityEditor;
 
 public class DebugMenu : EditorWindow
 {
-	private SubtitleController subtitleController;
+	public SubtitleController subtitleControllerObject;
+	private SubtitleController subtitleController {
+		get {
+			if (subtitleControllerObject == null) {
+				subtitleControllerObject = FindObjectOfType<SubtitleController>();
+			}
+			return subtitleControllerObject;
+		}
+	}
 	
 	[MenuItem("Tools/Debug Menu")]
 	public static void ShowWindow()
@@ -14,23 +22,25 @@ public class DebugMenu : EditorWindow
 	
 	private void OnGUI()
 	{
+		EditorGUILayout.BeginHorizontal();
 		if (GUILayout.Button("Debug Dialog", GUILayout.Width(100), GUILayout.Height(35)) && Application.isPlaying)
 		{
 			DebugDialog();
 		}
+		if (GUILayout.Button("Starting Dialog", GUILayout.Width(100), GUILayout.Height(35)) && Application.isPlaying)
+		{
+			StartingDialog();
+		}
+		EditorGUILayout.EndHorizontal();
 	}
 	
 	private void DebugDialog()
 	{
-		if(subtitleController == null)
-		{
-			subtitleController = FindObjectOfType<SubtitleController>();
-			if(subtitleController == null)
-			{
-				Debug.LogError("SubtitleController not found");
-				return;
-			}
-		}
 		subtitleController.DebugDialog();
+	}
+	
+	private void StartingDialog()
+	{
+		subtitleController.StartingDialog();
 	}
 }

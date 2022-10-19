@@ -19,46 +19,65 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3a979ced2c80c04f99fc0811676ce2b, type: 2}
   newItemScene: {fileID: 0}
   availableDialogs:
-  - text: "Al\xF4?"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Al\xF4?"
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "U\xE9. Al\xF4\xF4?"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "U\xE9. Al\xF4\xF4?"
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Ho, coloquei a orelha neste tro\xE7o em vez do olho. Wohohoho!"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Ho, coloquei a orelha neste tro\xE7o em vez do olho. Wohohoho!"
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Bom, para obter a \xF3rbita de um sat\xE9lite \xE9 necess\xE1rio s\xF3
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Bom, para obter a \xF3rbita de um sat\xE9lite \xE9 necess\xE1rio s\xF3
       olhar bem de perto para alguma lua e recitar umas palavrinhas m\xE1gicas."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Vamos l\xE1 ent\xE3o:..."
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Vamos l\xE1 ent\xE3o:..."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Al\xF4?"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Al\xF4?"
     textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
-  - text: "Al\xF4?"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Al\xF4?"
     textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
-  - text: Brincadeirinha! Wohohoho!
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: Brincadeirinha! Wohohoho!
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Est\xE1 bem, sem galhofas, hora de ver o cosmos."
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Est\xE1 bem, sem galhofas, hora de ver o cosmos."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Hmmm... entendo... aquarianos v\xE3o ter sorte nas pr\xF3ximas semanas."
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Hmmm... entendo... aquarianos v\xE3o ter sorte nas pr\xF3ximas semanas."
     textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
-  - text: Oh, perdi o foco.
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: Oh, perdi o foco.
     textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
-  - text: "L\xE1 est\xE1! Uma \xF3rbita perfeita. E est\xE1 no \xE2ngulo certo, rotacionada
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "L\xE1 est\xE1! Uma \xF3rbita perfeita. E est\xE1 no \xE2ngulo certo, rotacionada
       para c\xE1."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "Agora as palavras m\xE1gicas:"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Agora as palavras m\xE1gicas:"
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: If you wanna be my lover, you gotta get with my friends! Make it last forever,
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: If you wanna be my lover, you gotta get with my friends! Make it last forever,
       friendship never eeends!
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: Sim.
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: Sim.
     textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
-  - text: 'Spice Girls. '
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: 'Spice Girls. '
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "H\xE1 poucas coisas mais poderosas no universo do que o girl power."
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "H\xE1 poucas coisas mais poderosas no universo do que o girl power."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "E prontinho, a \xF3rbita de um sat\xE9lite em minhas m\xE3os!"
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "E prontinho, a \xF3rbita de um sat\xE9lite em minhas m\xE3os!"
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: Heh heh, disse que esse ia ser moleza.
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: Heh heh, disse que esse ia ser moleza.
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   unavailableDialogs: []
   interacted: 0

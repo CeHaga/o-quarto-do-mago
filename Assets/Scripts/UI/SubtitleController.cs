@@ -6,26 +6,30 @@ public class SubtitleController : MonoBehaviour
 {
 	[SerializeField] private GameObject dialogBox;
 	//[SerializeField] private BoxCollider2D dialogCollider;
-	[SerializeField] private TextMeshProUGUI textMesh;
+	[SerializeField] private TextMeshProUGUI dialogTextMesh;
+	[SerializeField] private TextMeshProUGUI nameTextMesh;
 	
 	public Dialog[] testDialogs;
+	
+	public Dialog[] startingDialogs;
 
 	private IEnumerator CO_SetTextForSeconds(Dialog dialog)
 	{
-		textMesh.enabled = true;
 		string text = "";
+		nameTextMesh.text = dialog.character.name;
 		foreach (char c in dialog.text)
 		{
 			text += c;
-			textMesh.text = text;
+			dialogTextMesh.text = text;
 			yield return new WaitForSeconds(dialog.timeBetweenLetters);
 		}
 		yield return new WaitForSeconds(0.5f);
-		textMesh.enabled = false;
 	}
 	
 	private IEnumerator CO_PlayDialogs(Dialog[] dialogs)
 	{
+		dialogTextMesh.text = "";
+		nameTextMesh.text = "";
 		dialogBox.SetActive(true);
 		//dialogCollider.enabled = true;
 		foreach (var dialog in dialogs)
@@ -45,6 +49,11 @@ public class SubtitleController : MonoBehaviour
 	{
 		Debug.Log("DebugDialog");
 		StartCoroutine(CO_PlayDialogs(testDialogs));
+	}
+	
+	public void StartingDialog()
+	{
+		StartCoroutine(CO_PlayDialogs(startingDialogs));
 	}
 	
 	public void OnMouseDown()

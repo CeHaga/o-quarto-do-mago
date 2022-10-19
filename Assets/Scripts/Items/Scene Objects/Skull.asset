@@ -18,9 +18,11 @@ MonoBehaviour:
   rewards: []
   newItemScene: {fileID: 0}
   availableDialogs:
-  - text: Olavo.
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: Olavo.
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - text: "N\xE3o sinto saudades."
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "N\xE3o sinto saudades."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   unavailableDialogs: []
   interacted: 0

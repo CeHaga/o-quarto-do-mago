@@ -2,6 +2,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class Dialog {
+	public Character character;
 	[TextArea(2,5)] public string text;
 	public Speed textSpeed;
 	
