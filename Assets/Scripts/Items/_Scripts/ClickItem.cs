@@ -10,12 +10,15 @@ public class ClickItem : MonoBehaviour
 	
 	public void OnMouseDown()
 	{
-		if(item.available)
+		if(GameStateManager.gameState == GameState.Playing)
 		{
-			ItemAvailable();
-		}else
-		{
-			ItemUnavailable();
+			if(item.available)
+			{
+				ItemAvailable();
+			}else
+			{
+				ItemUnavailable();
+			}
 		}
 	}
 	

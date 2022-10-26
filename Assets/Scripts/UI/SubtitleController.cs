@@ -5,59 +5,98 @@ using TMPro;
 public class SubtitleController : MonoBehaviour
 {
 	[SerializeField] private GameObject dialogBox;
-	//[SerializeField] private BoxCollider2D dialogCollider;
+	[SerializeField] private BoxCollider2D dialogCollider;
 	[SerializeField] private TextMeshProUGUI dialogTextMesh;
 	[SerializeField] private TextMeshProUGUI nameTextMesh;
 	
 	public Dialog[] testDialogs;
 	
 	public Dialog[] startingDialogs;
+	
+	private bool waitingDialog;
+	private bool skipDialog;
+	private Dialog[] currentDialogs;
+	private int currentDialogIndex;
 
+	public void OnMouseDown()
+	{
+		if(GameStateManager.gameState == GameState.Dialog)
+		{
+			skipDialog = true;
+			if(waitingDialog)
+			{
+				StartCoroutine(CO_ContinueDialog());
+			}
+		}
+	}
+	
+	private IEnumerator CO_ContinueDialog()
+	{
+		if(currentDialogIndex == currentDialogs.Length)
+		{
+			EndDialog();
+			yield break;
+		}
+		
+		ResetDialogBox();
+		yield return StartCoroutine(CO_SetTextForSeconds(currentDialogs[currentDialogIndex]));
+		
+		currentDialogIndex++;
+		waitingDialog = true;
+	}
+	
+	private void EndDialog()
+	{
+		dialogBox.SetActive(false);
+		dialogCollider.enabled = false;
+		GameStateManager.gameState = GameState.Playing;
+	}
+	
 	private IEnumerator CO_SetTextForSeconds(Dialog dialog)
 	{
 		string text = "";
 		nameTextMesh.text = dialog.character.name;
 		foreach (char c in dialog.text)
 		{
+			if(skipDialog)
+			{
+				dialogTextMesh.text = dialog.text;
+				yield break;
+			}
 			text += c;
 			dialogTextMesh.text = text;
 			yield return new WaitForSeconds(dialog.timeBetweenLetters);
 		}
-		yield return new WaitForSeconds(0.5f);
-	}
-	
-	private IEnumerator CO_PlayDialogs(Dialog[] dialogs)
-	{
-		dialogTextMesh.text = "";
-		nameTextMesh.text = "";
-		dialogBox.SetActive(true);
-		//dialogCollider.enabled = true;
-		foreach (var dialog in dialogs)
-		{
-			yield return StartCoroutine(CO_SetTextForSeconds(dialog));
-		}
-		dialogBox.SetActive(false);
-		//dialogCollider.enabled = false;
 	}
 	
 	public void StartText(Dialog[] dialogs)
 	{
-		StartCoroutine(CO_PlayDialogs(dialogs));
+		GameStateManager.gameState = GameState.Dialog;
+		
+		currentDialogs = dialogs;
+		currentDialogIndex = 0;
+		dialogBox.SetActive(true);
+		dialogCollider.enabled = true;
+		
+		StartCoroutine(CO_ContinueDialog());
+	}
+	
+	private void ResetDialogBox()
+	{
+		waitingDialog = false;
+		skipDialog = false;
+		dialogTextMesh.text = "";
+		nameTextMesh.text = "";
 	}
 	
 	public void DebugDialog()
 	{
 		Debug.Log("DebugDialog");
-		StartCoroutine(CO_PlayDialogs(testDialogs));
+		StartText(testDialogs);
 	}
 	
 	public void StartingDialog()
 	{
-		StartCoroutine(CO_PlayDialogs(startingDialogs));
-	}
-	
-	public void OnMouseDown()
-	{
-		Debug.Log("Bloqueia Diálogo");
+		StartText(startingDialogs);
 	}
 }
