@@ -24,9 +24,9 @@ public class ClickItem : MonoBehaviour
 	
 	private void ItemAvailable()
 	{
+		playDialog.Invoke(item.availableDialogs);
 		Inventory.inventory.RemoveItems(item.necessaryItems);
 		Inventory.inventory.AddItems(item.rewards);
-		playDialog.Invoke(item.availableDialogs);
 	}
 	
 	private void ItemUnavailable()

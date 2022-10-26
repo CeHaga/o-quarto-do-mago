@@ -63,4 +63,13 @@ public class Inventory : MonoBehaviour
 		return true;
 	}
 	
+	public override string ToString()
+	{
+		string list = "";
+		foreach (ItemInventory i in inventoryList)
+		{
+			list += i.name + "\n";
+		}
+		return list;
+	}
 }
