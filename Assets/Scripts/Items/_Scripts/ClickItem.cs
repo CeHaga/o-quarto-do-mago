@@ -10,7 +10,7 @@ public class ClickItem : MonoBehaviour
 	
 	public void OnMouseDown()
 	{
-		if(GameStateManager.gameState == GameState.Playing)
+		if(GameStateManager.gameState == GameState.Playing && !item.interacted)
 		{
 			if(item.available)
 			{
@@ -24,6 +24,7 @@ public class ClickItem : MonoBehaviour
 	
 	private void ItemAvailable()
 	{
+		item.interacted = true;
 		playDialog.Invoke(item.availableDialogs);
 		Inventory.inventory.RemoveItems(item.necessaryItems);
 		Inventory.inventory.AddItems(item.rewards);
