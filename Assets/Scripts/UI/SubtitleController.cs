@@ -17,6 +17,17 @@ public class SubtitleController : MonoBehaviour
 	private bool skipDialog;
 	private Dialog[] currentDialogs;
 	private int currentDialogIndex;
+	
+	private void Start() {
+		dialogCollider.enabled = false;
+		dialogBox.SetActive(false);
+		waitingDialog = false;
+		skipDialog = false;
+		currentDialogs = null;
+		currentDialogIndex = 0;
+		
+		StartText(startingDialogs);
+	}
 
 	public void OnMouseDown()
 	{
@@ -45,7 +56,7 @@ public class SubtitleController : MonoBehaviour
 		waitingDialog = true;
 	}
 	
-	private void EndDialog()
+	public void EndDialog()
 	{
 		dialogBox.SetActive(false);
 		dialogCollider.enabled = false;
@@ -98,5 +109,11 @@ public class SubtitleController : MonoBehaviour
 	public void StartingDialog()
 	{
 		StartText(startingDialogs);
+	}
+	
+	public void BreakDialog()
+	{
+		skipDialog = true;
+		EndDialog();
 	}
 }
