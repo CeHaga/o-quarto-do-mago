@@ -8,9 +8,16 @@ public class ClickItem : MonoBehaviour
 	public ItemScene item;
 	public DialogEvent playDialog;
 	
+	private bool interacted;
+	
+	private void Start()
+	{
+		interacted = false;
+	}
+	
 	public void OnMouseDown()
 	{
-		if(GameStateManager.gameState == GameState.Playing && !item.interacted)
+		if(GameStateManager.gameState == GameState.Playing && !interacted)
 		{
 			if(item.available)
 			{
@@ -24,9 +31,9 @@ public class ClickItem : MonoBehaviour
 	
 	private void ItemAvailable()
 	{
-		item.interacted = true;
-		playDialog.Invoke(item.availableDialogs);
+		interacted = true;
 		Inventory.inventory.RemoveItems(item.necessaryItems);
+		playDialog.Invoke(item.availableDialogs);
 		Inventory.inventory.AddItems(item.rewards);
 	}
 	

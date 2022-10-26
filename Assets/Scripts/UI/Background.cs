@@ -7,6 +7,9 @@ public class Background
 {
 	public GameObject background;
 	public ItemInventory[] necessaryItems;
+	public Dialog[] cutsceneDialogs;
+	public bool cutscenePlayed;
+	public Dialog[] unavailableDialogs;
 	
 	public bool IsAvailable()
 	{

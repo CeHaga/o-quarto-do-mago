@@ -10,45 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f717b8e163cedc4b82aed9cc2f66c1f, type: 3}
-  m_Name: Window
+  m_Name: Staff
   m_EditorClassIdentifier: 
-  name: Escotilha Aberta
+  name: Cajado
   necessaryItems:
-  - {fileID: 11400000, guid: 4bddb01de25b9814291b0c0692a269f5, type: 2}
+  - {fileID: 11400000, guid: 06ceb4c0fa98fc743b4ad02bc67d1990, type: 2}
   rewards:
-  - {fileID: 11400000, guid: 20ecc9f445035b8469999794d96b09b6, type: 2}
+  - {fileID: 11400000, guid: 55bff8a7d2eb461498a91f08b5f7d7d8, type: 2}
   newItemScene: {fileID: 0}
   availableDialogs:
   - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Basta aguardar a luz do farol apontar para c\xE1 e iluminar o frasco,
-      o resto fica por conta da magia."
+    text: "Meu cajado! Mas \xE9 l\xF3gico! Estive apoiando nele para conseguir olhar
+      para os lados."
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Est\xE1 quase olhando para c\xE1... vamos l\xE1 farolzinho..."
-    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: Vamos, vamos...
+    text: "Borbulhando, misturando, decantando...\r"
     textSpeed: {fileID: 11400000, guid: 2ac28e325526f5047b7340183cc894e7, type: 2}
   - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Vire-se para c\xE1 de uma vez..."
-    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Meus bra\xE7os est\xE3o doendo, j\xE1 fazem quase DUAS HORAS!"
-    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Oh \xE9 mesmo, \xE9 que o tempo aqui na torre corre diferente. Wohoho!"
-    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Opa! Finalmente!! Aqui em minhas m\xE3os, a luz de um farol!"
-    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "\xC9 QUEEENTE! AI AI ai."
+    text: "E o rem\xE9dio est\xE1 pronto!"
     textSpeed: {fileID: 11400000, guid: 1bd66959a1b81e04e8e1634f60e7b0a1, type: 2}
-  unavailableDialogs:
   - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Aqui estava voc\xEA, meu farolzinho."
+    text: Glub glub glub glub... Ahhhhh. Eca, que gosto de... Sukita?? Huh, inusitado.
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
   - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
-    text: "Agora \xE9 s\xF3 eu segurar um frasco bem alto e esperar..."
+    text: "Ufa, est\xE1 feito! O melhor rem\xE9dio para torcicolo que um mago pode
+      fazer! Feito com os conceitos mais... h\xE3m... prenunciados do universo. Wohohoho!\r"
     textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
-  interacted: 0
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Meu pesco\xE7o estava me matando de dor. Mas que al\xEDvio..."
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
+  - character: {fileID: 11400000, guid: 814cbcee08a7a2c4e84c3f532d85c15b, type: 2}
+    text: "Parece que finalmente agora conseguirei olhar para tr\xE1s."
+    textSpeed: {fileID: 11400000, guid: 9c7479967c473774998f351d8c7b605c, type: 2}
+  unavailableDialogs: []

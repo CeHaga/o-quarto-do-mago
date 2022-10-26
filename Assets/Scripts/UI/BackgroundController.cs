@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using DG.Tweening;
 
 public class BackgroundController : MonoBehaviour
@@ -9,6 +10,8 @@ public class BackgroundController : MonoBehaviour
 	public float backgroundX;
 	public float backgroundXPeek;
 	public Background[] backgrounds;
+	[Header("Dialogs")]
+	public DialogEvent playDialog;
 
 	private int actualBackground; 
 	private bool isMoving;
@@ -42,7 +45,7 @@ public class BackgroundController : MonoBehaviour
 	}
 	
 	// Move backgrounds using DOTween
-	private IEnumerator MoveBackgrounds(int actual, int direction, float distance, int rangeStart = -1, int rangeEnd = 1, float time = 1)
+	private IEnumerator MoveBackgrounds(int actual, int direction, float distance, Background nextBackground, int rangeStart = -1, int rangeEnd = 1, float time = 1)
 	{
 		int newBackgroundIndex = (direction > 0) ? rangeStart - 1 : rangeEnd + 1;
 		int oldBackgroundIndex = (direction > 0) ? rangeEnd : rangeStart;
@@ -61,14 +64,22 @@ public class BackgroundController : MonoBehaviour
 		
 		yield return new WaitForSeconds(time);
 		SetBackgroundPosition(actual + oldBackgroundIndex, oldPosition);
+		
+		if(!nextBackground.cutscenePlayed)
+		{
+			nextBackground.cutscenePlayed = true;
+			playDialog.Invoke(nextBackground.cutsceneDialogs);
+		}
 		isMoving = false;
 	}
 	
 	// Move backgrounds in case of not available
-	private IEnumerator MoveBackgroundsNotAvailable(int actual, int direction, float distance, int rangeStart = -1, int rangeEnd = 1, float time = 1)
+	private IEnumerator MoveBackgroundsNotAvailable(int actual, int direction, float distance, Background unavailableBackground, int rangeStart = -1, int rangeEnd = 1, float time = 1)
 	{
 		int start = rangeStart;
 		int end = rangeEnd;
+		
+		playDialog.Invoke(unavailableBackground.unavailableDialogs);
 		
 		for (int i = start; i <= end; i++)
 		{
@@ -96,16 +107,17 @@ public class BackgroundController : MonoBehaviour
 		if (isMoving) return;
 		isMoving = true;	
 		
-		int nextBackground = actualBackground - 1;
+		int nextBackgroundIndex = actualBackground - 1;
+		Background nextBackground = GetBackground(nextBackgroundIndex);
 		
-		if (GetBackground(nextBackground).IsAvailable())
+		if (nextBackground.IsAvailable())
 		{
-			StartCoroutine(MoveBackgrounds(actualBackground, 1, backgroundX));
-			actualBackground = nextBackground;
+			StartCoroutine(MoveBackgrounds(actualBackground, 1, backgroundX, nextBackground));
+			actualBackground = nextBackgroundIndex;
 		}
 		else
 		{
-			StartCoroutine(MoveBackgroundsNotAvailable(actualBackground, 1, backgroundXPeek));
+			StartCoroutine(MoveBackgroundsNotAvailable(actualBackground, 1, backgroundXPeek, nextBackground));
 		}
 	}
 
@@ -114,16 +126,17 @@ public class BackgroundController : MonoBehaviour
 		if (isMoving) return;
 		isMoving = true;	
 		
-		int nextBackground = actualBackground + 1;
+		int nextBackgroundIndex = actualBackground + 1;
+		Background nextBackground = GetBackground(nextBackgroundIndex);
 		
-		if (GetBackground(nextBackground).IsAvailable())
+		if (nextBackground.IsAvailable())
 		{
-			StartCoroutine(MoveBackgrounds(actualBackground, -1, backgroundX));
-			actualBackground = nextBackground;
+			StartCoroutine(MoveBackgrounds(actualBackground, -1, backgroundX, nextBackground));
+			actualBackground = nextBackgroundIndex;
 		}
 		else
 		{
-			StartCoroutine(MoveBackgroundsNotAvailable(actualBackground, -1, backgroundXPeek));
+			StartCoroutine(MoveBackgroundsNotAvailable(actualBackground, -1, backgroundXPeek, nextBackground));
 		}
 	}
 }

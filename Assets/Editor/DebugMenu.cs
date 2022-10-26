@@ -31,6 +31,10 @@ public class DebugMenu : EditorWindow
 		{
 			StartingDialog();
 		}
+		if (GUILayout.Button("Break Dialog", GUILayout.Width(100), GUILayout.Height(35)) && Application.isPlaying)
+		{
+			BreakDialog();
+		}
 		EditorGUILayout.EndHorizontal();
 	}
 	
@@ -42,5 +46,10 @@ public class DebugMenu : EditorWindow
 	private void StartingDialog()
 	{
 		subtitleController.StartingDialog();
+	}
+	
+	private void BreakDialog()
+	{
+		subtitleController.BreakDialog();
 	}
 }

@@ -13,7 +13,6 @@ public class ItemScene : ScriptableObject {
 	public Dialog[] availableDialogs;
 	public Dialog[] unavailableDialogs;
 	
-	public bool interacted;
 	public bool available 
 	{
 		get
