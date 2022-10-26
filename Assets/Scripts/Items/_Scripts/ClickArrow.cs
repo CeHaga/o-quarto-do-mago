@@ -9,6 +9,9 @@ public class ClickArrow : MonoBehaviour
 	
 	public void OnMouseDown()
 	{
-		onArrowClick.Invoke();
+		if(GameStateManager.gameState == GameState.Playing)
+		{
+			onArrowClick.Invoke();
+		}
 	}
 }
