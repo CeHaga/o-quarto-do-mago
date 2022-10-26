@@ -2,14 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Inventory", menuName = "Inventory", order = 0)]
-public class Inventory : ScriptableObject
+public class Inventory : MonoBehaviour
 {
-	private ArrayList inventory = new ArrayList();
+	[HideInInspector]
+	public static Inventory inventory;
+	
+	private ArrayList inventoryList;
+	
+	private void Awake()
+	{
+		if (inventory != null && inventory != this)
+		{
+			Destroy(this.gameObject);
+			return;
+		}
+		inventory = this;
+		inventoryList = new ArrayList();
+	}
 	
 	public void AddItem(ItemInventory item)
 	{
-		inventory.Add(item);
+		inventoryList.Add(item);
 	}
 	
 	public void AddItems(ItemInventory[] items)
@@ -22,7 +35,7 @@ public class Inventory : ScriptableObject
 	
 	public void RemoveItem(ItemInventory item)
 	{
-		inventory.Remove(item);
+		inventoryList.Remove(item);
 	}
 	
 	public void RemoveItems(ItemInventory[] items)
@@ -35,14 +48,14 @@ public class Inventory : ScriptableObject
 	
 	public bool HasItem(ItemInventory item)
 	{
-		return inventory.Contains(item);
+		return inventoryList.Contains(item);
 	}
 	
 	public bool HasItems(ItemInventory[] item)
 	{
 		foreach (ItemInventory i in item)
 		{
-			if (!inventory.Contains(i))
+			if (!inventoryList.Contains(i))
 			{
 				return false;
 			}

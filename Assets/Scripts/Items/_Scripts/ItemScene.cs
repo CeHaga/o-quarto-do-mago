@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ItemScene", menuName = "Items/Scene", order = 0)]
 public class ItemScene : ScriptableObject {
 	public new string name;
-	public Inventory inventory;
 	
 	public ItemInventory[] necessaryItems;
 	public ItemInventory[] rewards;
@@ -19,7 +18,7 @@ public class ItemScene : ScriptableObject {
 	{
 		get
 		{
-			return inventory.HasItems(necessaryItems);
+			return Inventory.inventory.HasItems(necessaryItems);
 		}
 	}
 }

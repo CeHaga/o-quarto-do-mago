@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class ClickItem : MonoBehaviour
 {
-	public Inventory inventory;
 	public ItemScene item;
 	public DialogEvent playDialog;
 	
@@ -22,8 +21,8 @@ public class ClickItem : MonoBehaviour
 	
 	private void ItemAvailable()
 	{
-		inventory.RemoveItems(item.necessaryItems);
-		inventory.AddItems(item.rewards);
+		Inventory.inventory.RemoveItems(item.necessaryItems);
+		Inventory.inventory.AddItems(item.rewards);
 		playDialog.Invoke(item.availableDialogs);
 	}
 	
