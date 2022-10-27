@@ -1,5 +1,6 @@
 public enum GameState
 {
 	Playing,
-	Dialog
+	Dialog,
+	End
 }

@@ -6,9 +6,10 @@ using UnityEngine;
 public class Background
 {
 	public GameObject background;
+	public GameState gameState;
 	public ItemInventory[] necessaryItems;
 	public Dialog[] cutsceneDialogs;
-	public bool cutscenePlayed;
+	[HideInInspector] public bool cutscenePlayed;
 	public Dialog[] unavailableDialogs;
 	
 	public bool IsAvailable()

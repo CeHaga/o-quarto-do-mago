@@ -18,6 +18,8 @@ public class SubtitleController : MonoBehaviour
 	private Dialog[] currentDialogs;
 	private int currentDialogIndex;
 	
+	private GameState newGameState;
+	
 	private void Start() {
 		dialogCollider.enabled = false;
 		dialogBox.SetActive(false);
@@ -26,7 +28,7 @@ public class SubtitleController : MonoBehaviour
 		currentDialogs = null;
 		currentDialogIndex = 0;
 		
-		StartText(startingDialogs);
+		StartText(startingDialogs, GameStateManager.gameState);
 	}
 
 	public void OnMouseDown()
@@ -60,7 +62,7 @@ public class SubtitleController : MonoBehaviour
 	{
 		dialogBox.SetActive(false);
 		dialogCollider.enabled = false;
-		GameStateManager.gameState = GameState.Playing;
+		GameStateManager.gameState = newGameState;
 	}
 	
 	private IEnumerator CO_SetTextForSeconds(Dialog dialog)
@@ -80,8 +82,9 @@ public class SubtitleController : MonoBehaviour
 		}
 	}
 	
-	public void StartText(Dialog[] dialogs)
+	public void StartText(Dialog[] dialogs, GameState? newGameState=null)
 	{
+		this.newGameState = newGameState ?? GameStateManager.gameState;
 		GameStateManager.gameState = GameState.Dialog;
 		
 		currentDialogs = dialogs;

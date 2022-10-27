@@ -33,12 +33,12 @@ public class ClickItem : MonoBehaviour
 	{
 		interacted = true;
 		Inventory.inventory.RemoveItems(item.necessaryItems);
-		playDialog.Invoke(item.availableDialogs);
+		playDialog.Invoke(item.availableDialogs, null);
 		Inventory.inventory.AddItems(item.rewards);
 	}
 	
 	private void ItemUnavailable()
 	{
-		playDialog.Invoke(item.unavailableDialogs);
+		playDialog.Invoke(item.unavailableDialogs, null);
 	}
 }

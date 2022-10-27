@@ -4,6 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class DialogEvent : UnityEvent<Dialog[]>
+public class DialogEvent : UnityEvent<Dialog[], GameState?>
 {
 }

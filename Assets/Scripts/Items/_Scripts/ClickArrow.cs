@@ -23,7 +23,7 @@ public class ClickArrow : MonoBehaviour
 			{
 				interacted = true;
 				Inventory.inventory.RemoveItems(item.necessaryItems);
-				playDialog.Invoke(item.availableDialogs);
+				playDialog.Invoke(item.availableDialogs, null);
 				Inventory.inventory.AddItems(item.rewards);
 				gameObject.SetActive(false);
 			}
