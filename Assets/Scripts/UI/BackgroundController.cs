@@ -68,7 +68,7 @@ public class BackgroundController : MonoBehaviour
 		if(!nextBackground.cutscenePlayed)
 		{
 			nextBackground.cutscenePlayed = true;
-			playDialog.Invoke(nextBackground.cutsceneDialogs);
+			playDialog.Invoke(nextBackground.cutsceneDialogs, nextBackground.gameState);
 		}
 		isMoving = false;
 	}
@@ -79,7 +79,7 @@ public class BackgroundController : MonoBehaviour
 		int start = rangeStart;
 		int end = rangeEnd;
 		
-		playDialog.Invoke(unavailableBackground.unavailableDialogs);
+		playDialog.Invoke(unavailableBackground.unavailableDialogs, null);
 		
 		for (int i = start; i <= end; i++)
 		{

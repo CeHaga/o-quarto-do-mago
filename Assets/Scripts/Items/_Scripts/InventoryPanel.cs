@@ -11,5 +11,9 @@ public class InventoryPanel : MonoBehaviour
 		{
 			inventoryText.text = Inventory.inventory.ToString();
 		}	
+		if(GameStateManager.gameState == GameState.End)
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }
